@@ -1,4 +1,4 @@
-import {useState, useRef} from 'react';
+import {useRef} from 'react';
 
 import Card from './layout/ui/Card';
 import classes from './NewMeetupForm.module.css';
