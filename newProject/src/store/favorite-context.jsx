@@ -11,7 +11,6 @@ const FavoritesContext = createContext({
 
 // 컨텍스트 값을 없데이트 한다.
 export function FavoritesContextProvider(props) {
-
   const [userFavorites, setUserFavorites] = useState([]);
 
   const addFavoriteHandler = (favoriteMeetup) => {
