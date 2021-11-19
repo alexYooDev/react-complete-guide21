@@ -3,6 +3,7 @@ import AllMeetups from './pages/AllMeetups';
 import Favorites from './pages/Favorites';
 import NewMeetup from './pages/NewMeetup';
 import Layout from './components/layout/Layout';
+import {FavoritesContextProvider } from './store/favorite-context';
 
 function App() {
   return (

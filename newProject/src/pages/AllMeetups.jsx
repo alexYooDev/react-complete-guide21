@@ -1,4 +1,4 @@
-import MeetupList from "../components/layout/meetup/MeetupList";
+import MeetupList from "../components/meetup/MeetupList";
 import {useState, useEffect} from 'react';
 
 
