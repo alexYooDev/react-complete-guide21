@@ -24,6 +24,13 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+
+    console.log(`in App.js ${expense}`);
+    
+  }
+
   // React JSX behind the scene 
   // return React.createElement(
   //   "div",
@@ -33,7 +40,7 @@ function App() {
   // );
   return (
     <div >
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses data={expenses}/>
     </div>
   );
