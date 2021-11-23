@@ -3,9 +3,9 @@ import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
 
-  const [title, setTitle] = useState('');
-  const [amount, setAmount] = useState('');
-  const [date, setDate] = useState('');
+  const [enteredTitle, setTitle] = useState('');
+  const [enteredAmount, setAmount] = useState('');
+  const [enteredDate, setDate] = useState('');
 
   // const [userInput, setUserInput ] = useState({
   //   title : '',
@@ -50,9 +50,9 @@ const ExpenseForm = (props) => {
     e.preventDefault();
     
     const expenseData = {
-      title: title,
-      amount: amount,
-      date: new Date(date)
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate)
     };
     
     props.onSaveExpenseData(expenseData);
@@ -68,7 +68,7 @@ const ExpenseForm = (props) => {
           <label>Title</label>
           <input 
             type="text" 
-            value={title} 
+            value={enteredTitle} 
             onChange={titleChangeHandler} 
           />
         </div>
@@ -78,7 +78,7 @@ const ExpenseForm = (props) => {
             type="number" 
             min='0.01' 
             step='0.01' 
-            value={amount} 
+            value={enteredAmount} 
             onChange={amountChangeHandler} 
           />
         </div>
@@ -88,7 +88,7 @@ const ExpenseForm = (props) => {
             type="date" 
             min='2019-01-01' 
             max='2022-12-31' 
-            value={date} 
+            value={enteredDate} 
             onChange={dateChangeHandler}
           />
         </div>
