@@ -1,22 +1,34 @@
 import classes from './Input.module.css';
+import React, {useRef, useImperativeHandle } from 'react';
 
-const Input = () => {
+const Input = React.forwardRef((props, ref) => {
+  const inputRef = useRef(); 
+  
+  const activate = () => {
+    inputRef.current.focus();
+  }  
+  useImperativeHandle(ref, ()=> {
+    return {
+      focus: activate
+    }
+  });
   return (
     <div
       className={`${classes.control} ${
-        emailState.isValid === false ? classes.invalid : ""
+        props.isValid === false ? classes.invalid : ""
       }`}
     >
-      <label htmlFor="email">E-Mail</label>
+      <label htmlFor={props.id}>{props.label}</label>
       <input
-        type="email"
-        id="email"
-        value={emailState.value}
-        onChange={emailChangeHandler}
-        onBlur={validateEmailHandler}
+        ref={inputRef}
+        type={props.type}
+        id={props.id}
+        value={props.value}
+        onChange={props.onChange}
+        onBlur={props.onBlur}
       />
     </div>
   );
-};
+});
 
 export default Input;
